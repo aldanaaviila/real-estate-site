@@ -1,0 +1,1257 @@
+/* COLORES QUE SE USAN EN TODA LA PAGINA
+   azul oscuro: #000624
+   amarillo:    #ffb700
+   fondo:       #f2f3f7
+   texto:       #1d1d2b
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f2f3f7;
+    color: #1d1d2b;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* los elementos con el atributo hidden no se muestran (lo usa filtros.js) */
+[hidden] {
+    display: none !important;
+}
+
+/* etiqueta amarilla que va arriba de las fotos (VENTA / ALQUILER) */
+.etiqueta {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #ffb700;
+    color: #000624;
+    font-family: "Oswald", sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+
+/* NAVEGADOR */
+
+.navegador {
+    display: flex;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000624;
+    z-index: 100;
+    padding: 10px 40px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo img {
+    display: block;
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+#links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 35px;
+}
+
+#links a {
+    font-family: "Oswald", sans-serif;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+#links a:hover {
+    color: #ffb700;
+}
+
+/* pagina en la que estamos */
+#links a.activo {
+    color: #ffb700;
+    border-bottom-color: #ffb700;
+}
+
+/* M.Q PANTALLAS MAS CHICAS */
+
+@media (max-width: 768px) {
+    .navegador {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px 15px;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    #links {
+        gap: 20px;
+    }
+
+    #links a {
+        font-size: 15px;
+    }
+}
+
+
+/* MOTOR BUSQUEDA */
+
+.menu {
+    background-image: linear-gradient(rgba(0, 6, 36, 0.15), rgba(0, 6, 36, 0.35)), url('../images/fondos/fondo-inicio.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 520px;
+    padding: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.motor-de-busqueda {
+    background: rgba(0, 6, 36, 0.75);
+    padding: 30px;
+    border-radius: 12px;
+    width: 55%;
+    max-width: 680px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.motor-de-busqueda h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+}
+
+.busqueda-formulario {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+}
+
+.busqueda-opcion {
+    flex: 1;
+}
+
+.busqueda-opcion input,
+.busqueda-opcion select {
+    padding: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    height: 44px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* boton buscar (se usa en el inicio y en la pagina de propiedades) */
+.boton-buscar {
+    background-color: #ffb700;
+    color: #000624;
+    border: none;
+    padding: 0 22px;
+    height: 44px;
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-buscar:hover {
+    background-color: #ffc93d;
+}
+
+/* M.Q PANTALLAS MAS CHICAS */
+
+@media (max-width: 1080px) {
+    .menu {
+        justify-content: center;
+    }
+
+    .motor-de-busqueda {
+        width: 100%;
+    }
+
+    .busqueda-formulario {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        min-height: 420px;
+        padding: 20px 15px;
+    }
+
+    .motor-de-busqueda {
+        padding: 20px;
+    }
+
+    .motor-de-busqueda h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* CENTRO */
+
+.texto-inicio {
+    background-color: #000624;
+    padding: 60px 20px;
+}
+
+.texto-inicio p {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.texto-inicio strong {
+    color: #ffb700;
+    font-weight: 500;
+}
+
+
+/* CLICKEAR (ALQUILAR / COMPRAR) */
+
+.titulo-busqueda,
+.titulo-destacadas {
+    text-align: center;
+    margin: 60px 20px 30px 20px;
+}
+
+.titulo-busqueda h2,
+.titulo-destacadas h2 {
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+/* rayita amarilla debajo de los titulos */
+.titulo-busqueda h2::after,
+.titulo-destacadas h2::after,
+.caja-separacion h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ffb700;
+    margin: 12px auto 0 auto;
+}
+
+.seleccion {
+    display: flex;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.div-alquilar, .div-comprar {
+    flex: 1;
+    position: relative;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 260px;
+    text-decoration: none;
+}
+
+.seleccion img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* capa oscura sobre la imagen para que se lea el texto */
+.div-alquilar::after, .div-comprar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 6, 36, 0.45);
+    transition: background-color 0.3s ease;
+}
+
+.div-alquilar:hover img, .div-comprar:hover img {
+    transform: scale(1.08);
+}
+
+.div-alquilar:hover::after, .div-comprar:hover::after {
+    background-color: rgba(0, 6, 36, 0.25);
+}
+
+.texto-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #ffffff;
+    font-family: "Oswald", sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    border: 2px solid #ffffff;
+    padding: 8px 28px;
+}
+
+/* M.Q PANTALLAS CHICAS */
+
+@media (max-width: 768px) {
+    .seleccion {
+        flex-direction: column;
+    }
+
+    .div-alquilar, .div-comprar {
+        height: 180px;
+    }
+
+    .texto-img {
+        font-size: 1.6rem;
+    }
+
+    .titulo-busqueda h2,
+    .titulo-destacadas h2 {
+        font-size: 1.7rem;
+    }
+}
+
+
+/* PROPIEDADES DESTACADAS */
+
+.destacadas {
+    padding-bottom: 60px;
+}
+
+/* las tarjetas del inicio y de la pagina de propiedades comparten estilo */
+.destacadas-lista,
+.propiedades {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.div-propiedades {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 6, 36, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.div-propiedades:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0, 6, 36, 0.15);
+}
+
+.prop-imagen {
+    position: relative;
+    display: block;
+}
+
+/* todas las fotos con el mismo alto, recortadas para que no se deformen */
+.prop-imagen img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.propiedades-info {
+    display: flex;
+    flex-direction: column;
+    padding: 18px 20px 20px 20px;
+}
+
+.prop-precio span {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #000624;
+}
+
+.prop-cantidad {
+    display: flex;
+    gap: 25px;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-top: 1px solid #e3e5ee;
+    border-bottom: 1px solid #e3e5ee;
+}
+
+.prop-cantidad p {
+    margin: 6px 0;
+    color: #555a70;
+}
+
+.icono-1-prop, .icono-2-prop {
+    display: flex;
+    align-items: center;
+    color: #555a70;
+}
+
+.icono-1-prop p, .icono-2-prop p {
+    margin: 0;
+}
+
+.icono-1-prop img, .icono-2-prop img {
+    width: 30px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.prop-detalle h5 {
+    font-size: 1.1rem;
+    margin: 6px 0;
+}
+
+.prop-detalle h5 a {
+    color: #1d1d2b;
+    text-decoration: none;
+}
+
+.prop-detalle h5 a:hover {
+    color: #000624;
+    text-decoration: underline;
+}
+
+.prop-detalle p {
+    margin: 4px 0;
+    color: #555a70;
+    font-size: 15px;
+}
+
+
+/* PAG DE PROPIEDADES */
+
+/*PROPIEDADES*/
+
+.espacio-propiedades {
+    padding-bottom: 60px;
+}
+
+.titulo-propiedades h2 {
+    background-color: #000624;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 0 0 40px 0;
+    padding: 25px;
+}
+
+/* filtros a la izquierda y tarjetas a la derecha */
+.contenedor-propiedades {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* BUSCADOR - FILTROS (menu vertical) */
+
+.search-box {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 14px rgba(0, 6, 36, 0.06);
+    position: sticky; /* el menu acompaña al bajar */
+    top: 110px;
+}
+
+.search-box h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ffb700;
+}
+
+.search-propiedades {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.search-propiedades label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #555a70;
+}
+
+.search-propiedades input,
+.search-propiedades select {
+    width: 100%;
+    padding: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    border: 1px solid #cfd2de;
+    border-radius: 6px;
+    background-color: #ffffff;
+    height: 42px;
+}
+
+.search-box .boton-buscar {
+    width: 100%;
+}
+
+.boton-limpiar {
+    background: none;
+    border: none;
+    color: #555a70;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.boton-limpiar:hover {
+    color: #000624;
+}
+
+/* RESULTADOS */
+
+.resultados {
+    flex: 1;
+}
+
+.cantidad {
+    margin: 0 0 15px 0;
+    color: #555a70;
+}
+
+/* aca la grilla ocupa el espacio que deja el menu */
+.resultados .propiedades {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    max-width: none;
+    padding: 0;
+}
+
+.sin-resultados {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555a70;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+/* M.Q PANTALLAS CHICAS: el menu pasa arriba de las tarjetas */
+
+@media (max-width: 900px) {
+    .contenedor-propiedades {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        flex: none;
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-propiedades h2 {
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+    }
+
+    .contenedor-propiedades {
+        padding: 0 15px;
+    }
+
+    /* en celular los filtros van de a dos por fila para que no ocupen tanto */
+    .search-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 20px;
+    }
+
+    .search-box h3,
+    .search-propiedades:first-of-type,
+    .search-box button {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* PROPIEDADES PAGINAS INDIVIDUALES */
+
+.propiedad-individual {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 60px 20px;
+}
+
+.propiedad-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #ffb700;
+}
+
+.volver {
+    color: #555a70;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.volver:hover {
+    color: #000624;
+    text-decoration: underline;
+}
+
+.propiedad-titulo h2 {
+    font-size: 2.2rem;
+    margin: 10px 0 0 0;
+}
+
+.propiedad-titulo p {
+    margin: 4px 0 0 0;
+    color: #555a70;
+}
+
+.propiedad-titulo span {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    color: #000624;
+    white-space: nowrap;
+}
+
+/* GALERIA */
+
+.propiedad-imagen {
+    margin: 30px 0;
+}
+
+/* mensaje cuando el id de la URL no existe */
+.no-encontrada {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.no-encontrada a {
+    color: #000624;
+}
+
+#foto {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.slider-img {
+    display: flex;
+    gap: 12px;
+}
+
+.slider-img img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 3px solid transparent;
+    transition: opacity 0.3s ease;
+}
+
+.slider-img img:hover,
+.slider-img img.activa {
+    opacity: 1;
+}
+
+.slider-img img.activa {
+    border-color: #ffb700;
+}
+
+#anterior, #siguiente {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#anterior:hover, #siguiente:hover {
+    transform: scale(1.2);
+}
+
+/* FICHA */
+
+.propiedad-ficha {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.propiedad-ficha h4 {
+    font-size: 1.2rem;
+    margin: 0 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e3e5ee;
+}
+
+.propiedad-ficha-izq {
+    flex: 2;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 14px rgba(0, 6, 36, 0.06);
+}
+
+.propiedad-ficha-izq > div {
+    margin-bottom: 25px;
+}
+
+.propiedad-ficha ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.propiedad-ficha li::before {
+    content: '✔';
+    color: #ffb700;
+    margin-right: 10px;
+}
+
+.descripcion p {
+    line-height: 1.6;
+}
+
+.propiedad-ficha-der {
+    flex: 1;
+    position: sticky;
+    top: 110px;
+}
+
+.propiedad-formulario {
+    background-color: #000624;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.propiedad-formulario h4 {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+/* M.Q PANTALLAS MAS CHICAS */
+
+@media (max-width: 768px) {
+    .propiedad-titulo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .propiedad-titulo h2 {
+        font-size: 1.6rem;
+    }
+
+    .propiedad-titulo span {
+        font-size: 1.6rem;
+    }
+
+    #foto {
+        height: 260px;
+    }
+
+    .slider-container {
+        gap: 8px;
+    }
+
+    .slider-img {
+        gap: 6px;
+    }
+
+    .slider-img img {
+        width: 60px;
+        height: 45px;
+    }
+
+    #anterior, #siguiente {
+        width: 24px;
+        height: 24px;
+    }
+
+    .propiedad-ficha {
+        flex-direction: column;
+    }
+
+    .propiedad-ficha-izq,
+    .propiedad-ficha-der {
+        width: 100%;
+        position: static;
+    }
+
+    .propiedad-ficha-izq {
+        padding: 20px;
+    }
+
+    .propiedad-ficha ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* SOBRE NOSOTROS */
+
+.caja-info {
+    background-image: linear-gradient(rgba(0, 6, 36, 0.55), rgba(0, 6, 36, 0.55)), url('../images/fondos/fondo-nosotros.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 90px 20px 130px 20px;
+    text-align: center;
+}
+
+.caja-info h2 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* la caja blanca se "sube" encima de la imagen con margen negativo */
+.caja-historia {
+    max-width: 900px;
+    margin: -70px auto 0 auto;
+    padding: 35px 40px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 6, 36, 0.12);
+    position: relative;
+}
+
+.caja-historia p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.caja-separacion {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.caja-separacion h2 {
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.caja-proposito {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 40px auto 70px auto;
+    padding: 0 20px;
+}
+
+.vision, .mision, .valores {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border-top: 4px solid #ffb700;
+    box-shadow: 0 4px 14px rgba(0, 6, 36, 0.06);
+    text-align: center;
+    line-height: 1.6;
+}
+
+.caja-proposito h3 {
+    font-size: 1.5rem;
+    margin: 0 0 15px 0;
+    color: #000624;
+}
+
+.caja-proposito ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* M.Q PANTALLAS CHICAS */
+
+@media (max-width: 768px) {
+    .caja-info {
+        padding: 60px 20px 100px 20px;
+    }
+
+    .caja-info h2 {
+        font-size: 2rem;
+    }
+
+    .caja-historia {
+        margin: -60px 15px 0 15px;
+        padding: 25px 20px;
+    }
+
+    .caja-historia p {
+        font-size: 1.05rem;
+    }
+
+    .caja-separacion h2 {
+        font-size: 1.7rem;
+    }
+}
+
+
+/* CONTACTO */
+
+.titulo-contacto {
+    padding: 100px 20px;
+    background-image: linear-gradient(rgba(0, 6, 36, 0.45), rgba(0, 6, 36, 0.45)), url('../images/fondos/fondo-contacto.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.titulo-contacto h2 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+.texto-contacto {
+    text-align: center;
+    padding: 40px 20px 20px 20px;
+}
+
+.texto-contacto p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.form {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 60px 20px;
+}
+
+.form-izquierda {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-contacto {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border-left: 4px solid #ffb700;
+    padding: 20px 25px;
+    box-shadow: 0 4px 14px rgba(0, 6, 36, 0.06);
+}
+
+.info-contacto p {
+    margin: 8px 0;
+}
+
+.mapa {
+    flex: 1;
+    min-height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #dfe2ec;
+}
+
+.mapa iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border: none;
+}
+
+.formulario {
+    flex: 1;
+    background-color: #000624;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.formulario h4 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+}
+
+/* CAMPOS DE LOS FORMULARIOS (contacto y propiedad) */
+
+.formulario label,
+.propiedad-formulario label {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.formulario input,
+.formulario textarea,
+.propiedad-formulario input,
+.propiedad-formulario textarea {
+    width: 100%;
+    background-color: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+}
+
+.formulario input,
+.propiedad-formulario input {
+    height: 44px;
+}
+
+.formulario textarea,
+.propiedad-formulario textarea {
+    height: 140px;
+    resize: vertical;
+}
+
+.formulario input:focus,
+.formulario textarea:focus,
+.propiedad-formulario input:focus,
+.propiedad-formulario textarea:focus {
+    outline: none;
+    border-color: #ffb700;
+}
+
+.formulario button,
+.propiedad-formulario button {
+    width: 100%;
+    height: 46px;
+    background-color: #ffb700;
+    color: #000624;
+    border: none;
+    border-radius: 6px;
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover,
+.propiedad-formulario button:hover {
+    background-color: #ffc93d;
+}
+
+/* M.Q PANTALLAS CHICAS */
+
+@media (max-width: 768px) {
+    .titulo-contacto {
+        padding: 60px 20px;
+    }
+
+    .titulo-contacto h2 {
+        font-size: 1.8rem;
+    }
+
+    .texto-contacto p {
+        font-size: 1rem;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    .formulario {
+        padding: 20px;
+    }
+}
+
+
+/* PIE DE PAGINA */
+
+footer {
+    width: 100%;
+    background-color: #000624;
+    color: #ffffff;
+    padding: 40px 30px 20px 30px;
+}
+
+.contacto-central {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.izquierda, .centro, .derecha {
+    flex: 1;
+}
+
+footer h4 {
+    color: #ffb700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+}
+
+.izquierda p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 25px 0;
+    color: #d5d8e6;
+}
+
+.izquierda .ubicacion-img {
+    width: 22px;
+    height: 22px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.izquierda .ubicacion-text {
+    display: inline;
+}
+
+.centro {
+    text-align: center;
+}
+
+.centro-logo img {
+    width: 220px;
+    height: auto;
+}
+
+.centro-redes {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.centro-redes img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.centro-redes img:hover {
+    transform: scale(1.3);
+}
+
+.derecha {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.derecha ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #d5d8e6;
+}
+
+.derechos {
+    text-align: center;
+    font-size: 13px;
+    color: #8a8fa8;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 30px 0 0 0;
+    padding-top: 20px;
+}
+
+/* M.Q PARA PANTALLAS CHICAS */
+
+@media (max-width: 768px) {
+    .contacto-central {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .izquierda, .centro, .derecha {
+        width: 100%;
+    }
+
+    .centro {
+        order: -1; /* el logo va primero en celular */
+    }
+
+    .centro-logo img {
+        width: 170px;
+    }
+
+    .derecha {
+        justify-content: center;
+    }
+}

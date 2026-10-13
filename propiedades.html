@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Casas, departamentos y terrenos en venta y alquiler.">
+    <title>Propiedades | Propiedades A.B.C</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- NAVEGADOR -->
+    <header class="navegador">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/iconos/logo.png" alt="Propiedades A.B.C - Inicio">
+            </a>
+        </div>
+        <nav class="opciones">
+            <ul id="links">
+                <li><a href="nosotros.html">NOSOTROS</a></li>
+                <li><a href="propiedades.html" class="activo">PROPIEDADES</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PROPIEDADES -->
+    <section class="espacio-propiedades">
+
+        <div class="titulo-propiedades">
+            <h2 id="titulo">PROPIEDADES</h2> <!-- el JS cambia este título según el filtro -->
+        </div>
+
+        <!-- a la izquierda los filtros y a la derecha las tarjetas -->
+        <div class="contenedor-propiedades">
+
+            <!-- BUSCADOR - FILTROS -->
+            <form class="search-box" id="filtros">
+                <h3>FILTRAR</h3>
+
+                <div class="search-propiedades">
+                    <label for="ubicacion">Ubicación</label>
+                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ciudad o dirección">
+                </div>
+
+                <div class="search-propiedades">
+                    <label for="tipo-operacion">Operación</label>
+                    <select id="tipo-operacion" name="operacion">
+                        <option value="">Todas</option>
+                        <option value="venta">Comprar</option>
+                        <option value="alquiler">Alquilar</option>
+                    </select>
+                </div>
+
+                <div class="search-propiedades">
+                    <label for="tipo-de-propiedad">Tipo de propiedad</label>
+                    <select id="tipo-de-propiedad" name="tipo">
+                        <option value="">Todos</option>
+                        <option value="casa">Casa</option>
+                        <option value="departamento">Departamento</option>
+                        <option value="terreno">Terreno</option>
+                    </select>
+                </div>
+
+                <div class="search-propiedades">
+                    <label for="dormitorios">Dormitorios</label>
+                    <select id="dormitorios" name="dormitorios">
+                        <option value="0">Indistinto</option>
+                        <option value="1">1 o más</option>
+                        <option value="2">2 o más</option>
+                        <option value="3">3 o más</option>
+                    </select>
+                </div>
+
+                <div class="search-propiedades">
+                    <label for="banos">Baños</label>
+                    <select id="banos" name="banos">
+                        <option value="0">Indistinto</option>
+                        <option value="1">1 o más</option>
+                        <option value="2">2 o más</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="boton-buscar">Buscar</button>
+                <button type="reset" class="boton-limpiar">Limpiar filtros</button>
+            </form>
+
+            <div class="resultados">
+                <p id="cantidad" class="cantidad"></p>
+                <p id="sin-resultados" class="sin-resultados" hidden>No encontramos propiedades con esos filtros. Probá con otra búsqueda.</p>
+
+                <div class="propiedades">
+                    <!-- las tarjetas se arman con JS (scripts/filtros.js) usando los datos de scripts/datos.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PAGINA -->
+    <footer id="pie">
+        <div class="contacto-central">
+            <div class="izquierda">
+                <div class="horarios">
+                    <h4>HORARIOS</h4>
+                    <p>Lunes a Viernes de 9.00 a 13.00 hs. y de 15.00 a 18.00 hs.<br>Sábados de 9.00 a 12.30 hs.</p>
+                </div>
+                <div class="ubicacion">
+                    <h4>UBICACIÓN</h4>
+                    <img src="images/iconos/pin.png" alt="" class="ubicacion-img">
+                    <p class="ubicacion-text">Calle 123, CABA, Buenos Aires</p>
+                </div>
+            </div>
+
+            <div class="centro">
+                <div class="centro-logo">
+                    <img src="images/iconos/logo.png" alt="Propiedades A.B.C">
+                </div>
+                <div class="centro-redes">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener">
+                        <img src="images/iconos/facebook-icono.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener">
+                        <img src="images/iconos/instagram-icono.png" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener">
+                        <img src="images/iconos/linkedin-icono.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+
+            <div class="derecha">
+                <div class="derecha-busqueda">
+                    <h4>¿QUÉ ESTÁS BUSCANDO?</h4>
+                    <ul>
+                        <li>Terrenos</li>
+                        <li>Departamentos</li>
+                        <li>Casas</li>
+                        <li>Oficinas</li>
+                        <li>Locales</li>
+                        <li>Campos</li>
+                        <li>Galpones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="derechos">© 2024 Propiedades A.B.C - Proyecto académico UADE</p>
+    </footer>
+
+    <script src="scripts/datos.js"></script>
+    <script src="scripts/filtros.js"></script>
+</body>
+</html>
